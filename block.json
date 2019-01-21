@@ -2,14 +2,28 @@
   "type": "object",
   "required": ["name", "blockId", "category"],
   "properties": {
-    "name": { "type": "string", "title": "Name" },
-    "blockId": { "type": "string", "title": "Block ID" },
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "blockId": {
+      "type": "string",
+      "title": "Block ID"
+    },
     "category": {
       "title": "Category",
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Controller", "Power supply", "Support"]
+        "enum": ["output",
+          "input",
+          "controller",
+          "power",
+          "connectivity",
+          "powerConnector",
+          "support",
+          "iot"
+        ]
       },
       "uniqueItems": true
     },
@@ -18,25 +32,51 @@
       "title": "Appearance",
       "required": ["appName", "tags", "desc"],
       "properties": {
-        "appName": { "type": "string", "title": "Application name" },
-        "numericName": { "type": "string", "title": "Numeric name" },
-        "shortName": { "type": "string", "title": "Short name" },
-        "image": { "type": "string", "title": "Image" },
+        "appName": {
+          "type": "string",
+          "title": "Application name"
+        },
+        "numericName": {
+          "type": "string",
+          "title": "Numeric name"
+        },
+        "shortName": {
+          "type": "string",
+          "title": "Short name"
+        },
+        "image": {
+          "type": "string",
+          "title": "Image"
+        },
         "tags": {
           "title": "Tags",
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["Controller", "Power supply", "Support"]
+            "enum": ["output",
+              "input",
+              "controller",
+              "power",
+              "connectivity",
+              "powerConnector",
+              "support",
+              "iot"
+            ]    
           },
           "uniqueItems": true
         },
-        "visible": { "type": "boolean", "title": "Visible in application" },
+        "visible": {
+          "type": "boolean",
+          "title": "Visible in application"
+        },
         "indicators": {
           "type": "object",
           "title": "Indicators",
           "properties": {
-            "verified": { "type": "boolean", "default": false },
+            "verified": {
+              "type": "boolean",
+              "default": false
+            },
             "code": {
               "type": "boolean",
               "title": "Has coder support",
@@ -49,10 +89,15 @@
             }
           }
         },
-        "desc": { "type": "string", "title": "Description" }
+        "desc": {
+          "type": "string",
+          "title": "Description"
+        }
       }
     },
-    "notes": { "type": "string" },
+    "notes": {
+      "type": "string"
+    },
     "circuits": {
       "type": "array",
       "title": "",
@@ -60,8 +105,15 @@
         "type": "object",
         "required": ["name", "priority"],
         "properties": {
-          "name": { "type": "string", "title": "Name" },
-          "priority": { "type": "integer", "title": "Priority", "default": 0 },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "priority": {
+            "type": "integer",
+            "title": "Priority",
+            "default": 0
+          },
           "supportedControllers": {
             "type": "array",
             "title": "Supported Controllers",
@@ -92,8 +144,14 @@
               "type": "object",
               "required": ["name", "part"],
               "properties": {
-                "name": { "type": "string", "title": "Instance name" },
-                "part": { "type": "string", "title": "Part" }
+                "name": {
+                  "type": "string",
+                  "title": "Instance name"
+                },
+                "part": {
+                  "type": "string",
+                  "title": "Part"
+                }
               }
             }
           },
@@ -103,7 +161,11 @@
             "items": {
               "type": "object",
               "properties": {
-                "cost": { "type": "integer", "title": "Cost", "default": 0 },
+                "cost": {
+                  "type": "integer",
+                  "title": "Cost",
+                  "default": 0
+                },
                 "blocks": {
                   "type": "array",
                   "title": "Blocks",
@@ -116,14 +178,25 @@
               }
             }
           },
-          "coders": { "type": "array", "items": { "type": "string" } },
+          "coders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "wires": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "from": { "type": "string", "default": "" },
-                "to": { "type": "string", "default": "" }
+                "from": {
+                  "type": "string",
+                  "default": ""
+                },
+                "to": {
+                  "type": "string",
+                  "default": ""
+                }
               }
             }
           },
@@ -152,7 +225,10 @@
                       "items": {
                         "type": "object",
                         "properties": {
-                          "cost": { "type": "integer", "default": 0 },
+                          "cost": {
+                            "type": "integer",
+                            "default": 0
+                          },
                           "spec": {
                             "type": "string",
                             "default": "",
@@ -224,11 +300,21 @@
                         }
                       }
                     },
-                    "requiresLoad": { "type": "integer" },
-                    "providesLoad": { "type": "integer" },
-                    "unique": { "type": "boolean" },
-                    "includeInFirmware": { "type": "boolean" },
-                    "isBus": { "type": "boolean" }
+                    "requiresLoad": {
+                      "type": "integer"
+                    },
+                    "providesLoad": {
+                      "type": "integer"
+                    },
+                    "unique": {
+                      "type": "boolean"
+                    },
+                    "includeInFirmware": {
+                      "type": "boolean"
+                    },
+                    "isBus": {
+                      "type": "boolean"
+                    }
                   }
                 }
               }
