@@ -36,8 +36,8 @@
       "type": "object",
       "title": "Variable generation settings",
       "properties": {
-        "classname": { "type": "string", "title": "Class name" },
-        "varname": { "type": "string", "title": "Variable name" },
+        "classname": { "type": "string", "title": "Class name {{classname}}" },
+        "varname": { "type": "string", "title": "Variable name {{varname}}" },
         "ports": {
           "type": "array",
           "title": "Ports",
