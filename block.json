@@ -279,9 +279,6 @@
                     "unique": {
                       "type": "boolean"
                     },
-                    "includeInFirmware": {
-                      "type": "boolean"
-                    },
                     "isBus": {
                       "type": "boolean"
                     }
