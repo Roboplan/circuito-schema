@@ -242,7 +242,13 @@
                     "codename": {
                       "title": "Port codename [show for category controller only]",
                       "type": "string",
-                      "default": ""
+                      "default": "",
+                      "description": "Override deafult port name used in coder (used for controllers only)"
+                    },
+                    "codenameRedirect": {
+                      "title": "Codename redirect",
+                      "type": "string",
+                      "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
                     },
                     "requires": {
                       "type": "array",
@@ -271,13 +277,24 @@
                       }
                     },
                     "requiresLoad": {
+                      "title": "Requires max load (mA)",
+                      "description": "For a 'requires' port",
                       "type": "integer"
                     },
                     "providesLoad": {
+                      "title": "Provides max load (mA)",
+                      "description": "For a 'provides' port",
                       "type": "integer"
                     },
+                    "redirectLoad": {
+                      "title": "Redirect load",
+                      "type": "string",
+                      "description": "Redirect load verification to another port (used for support blocks only)"
+                    },
                     "unique": {
-                      "type": "boolean"
+                      "title": "Unique port",
+                      "type": "boolean",
+                      "description": "For 'requires' port, no other ports will be routed to its provider"
                     },
                     "isBus": {
                       "type": "boolean"
