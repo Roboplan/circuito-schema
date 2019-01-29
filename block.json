@@ -300,6 +300,11 @@
                       "type": "boolean"
                     }
                   }
+                },
+                "includeInFirmware": {
+                  "type": "boolean",
+                  "title": "Include in firmware",
+                  "description": "Create coder variable for port"
                 }
               }
             }
