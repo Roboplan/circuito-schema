@@ -4,24 +4,13 @@
     "name": { "type": "string", "title": "Name" },
     "displayName": { "type": "string", "title": "Display Name" },
     "desc": { "type": "string", "title": "Description" },
-    "symbol": {
-      "type": "object",
-      "properties": {
-        "URL": { "type": "string", "title": "Symbol (SVG)" },
-        "ref": { "type": "string" }
-      }
-    },
-    "symbolParam": {
-      "type": "string",
-      "title": "Symbol parameter",
-      "default": ""
-    },
+    "symbol": { "type": "string", "title": "Symbol (SVG) Link" },
     "category": {
       "title": "Category",
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["output", "input", "support", "power"]
+        "enum": ["output", "input", "support", "power", "controller"]
       },
       "uniqueItems": true
     },
