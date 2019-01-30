@@ -5,16 +5,9 @@
     "displayName": { "type": "string", "title": "Display Name" },
     "desc": { "type": "string", "title": "Description" },
     "symbol": {
-      "type": "object",
-      "properties": {
-        "URL": { "type": "string", "title": "Symbol (SVG)" },
-        "ref": { "type": "string" }
-      }
-    },
-    "symbolParam": {
       "type": "string",
-      "title": "Symbol parameter",
-      "default": ""
+      "title": "SVG Symbol",
+      "description": "SVG Symbol URL see circuito.io/blog/SVG-Guidelines"
     },
     "category": {
       "title": "Category",
