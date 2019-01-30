@@ -23,7 +23,7 @@
     }
   },
   "type": "object",
-  "required": ["name", "blockId", "category"],
+  "required": ["name", "category"],
   "properties": {
     "name": {
       "type": "string",
