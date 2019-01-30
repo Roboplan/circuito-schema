@@ -91,10 +91,6 @@
       "type": "string",
       "title": "Name"
     },
-    "blockId": {
-      "type": "string",
-      "title": "Block ID"
-    },
     "category": {
       "title": "Category",
       "type": "array",
@@ -112,6 +108,10 @@
       },
       "uniqueItems": true
     },
+    "blockId": {
+      "type": "string",
+      "title": "Block ID"
+    },
     "app": {
       "type": "object",
       "title": "Appearance",
@@ -121,6 +121,10 @@
           "type": "string",
           "title": "Application name"
         },
+        "image": {
+          "type": "string",
+          "title": "Image"
+        },
         "numericName": {
           "type": "string",
           "title": "Numeric name"
@@ -128,10 +132,6 @@
         "shortName": {
           "type": "string",
           "title": "Short name"
-        },
-        "image": {
-          "type": "string",
-          "title": "Image"
         },
         "visible": {
           "type": "boolean",
