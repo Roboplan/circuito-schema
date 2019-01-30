@@ -54,7 +54,7 @@
               "type": {
                 "type": "string",
                 "title": "Headers type",
-                "enum": ["FemaleHeaders", "MaleHeaders"]
+                "enum": ["FemaleHeaders", "MaleHeaders", "MaleHeadersTall"]
               },
               "qty": { "type": "integer", "title": "Headers quantity" }
             }
