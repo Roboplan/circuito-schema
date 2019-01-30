@@ -72,24 +72,6 @@
           "type": "string",
           "title": "Image"
         },
-        "tags": {
-          "title": "Tags",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "output",
-              "input",
-              "controller",
-              "power",
-              "connectivity",
-              "powerConnector",
-              "support",
-              "iot"
-            ]
-          },
-          "uniqueItems": true
-        },
         "visible": {
           "type": "boolean",
           "title": "Visible in application"
@@ -121,7 +103,8 @@
       }
     },
     "notes": {
-      "type": "string"
+      "type": "string",
+      "title": "Notes"
     },
     "circuits": {
       "type": "array",
