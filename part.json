@@ -26,16 +26,21 @@
       "uniqueItems": true
     },
     "placing": {
+      "title": "Part placing configuration",
       "type": "object",
       "properties": {
-        "onBreadboard": { "type": "boolean", "title": "Place on breadboard" }
+        "onBreadboard": {
+          "type": "boolean",
+          "title": "Place part on breadboard"
+        }
       }
     },
     "bom": {
       "type": "array",
+      "title": "BoM (Suppliers List)",
       "items": {
         "type": "object",
-        "title": "BoM data",
+        "title": "BoM data (Supplier)",
         "properties": {
           "name": {
             "type": "string",
@@ -65,19 +70,30 @@
     "info": {
       "type": "object",
       "properties": {
-        "setup": { "type": "string", "title": "Setup info", "default": "" },
-        "test": { "type": "string", "title": "Test info", "default": "" }
+        "setup": {
+          "type": "string",
+          "title": "Setup info",
+          "default": "",
+          "description": "Steps to prepare the part for use - soldering, correct orientation/placement tips etc."
+        },
+        "test": {
+          "type": "string",
+          "title": "Test info",
+          "default": "",
+          "description": "Special instruction on how to test the part once circuit is ready"
+        }
       }
     },
     "auxParts": {
       "type": "array",
       "title": "Auxilary parts",
+      "description": "Bundle parts with no electrical connectivity - bolts, heatsinks etc.",
       "items": {
         "type": "string",
         "enum": []
       },
       "uniqueItems": true
     },
-    "notes": { "type": "string" }
+    "notes": { "type": "string", "title": "Notes" }
   }
 }
