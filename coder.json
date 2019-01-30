@@ -1,7 +1,5 @@
 {
-  "type": "object",
-  "properties": {
-    "name": { "type": "string", "title": "Name" },
+  "definitions": {
     "supportedControllers": {
       "type": "array",
       "title": "Supported Controllers",
@@ -15,6 +13,7 @@
           "ArduinoNano",
           "ArduinoProMini5v",
           "ArduinoUno",
+          "Arduino101",
           "ATTiny85",
           "Teensy32",
           "ArduinoGemma",
@@ -25,6 +24,13 @@
         ]
       },
       "uniqueItems": true
+    }
+  },
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "title": "Name" },
+    "supportedControllers": {
+      "$ref": "#/definitions/supportedControllers"
     },
     "files": {
       "type": "array",

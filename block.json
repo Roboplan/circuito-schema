@@ -1,25 +1,87 @@
 {
   "definitions": {
+    "supportedControllers": {
+      "type": "array",
+      "title": "Supported Controllers",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ATMega328P",
+          "ArduinoLeonardo",
+          "ArduinoMega",
+          "ArduinoMicro",
+          "ArduinoNano",
+          "ArduinoProMini5v",
+          "ArduinoUno",
+          "Arduino101",
+          "ATTiny85",
+          "Teensy32",
+          "ArduinoGemma",
+          "ArduinoProMini3v3",
+          "ESP32DevKitC",
+          "NodeMCU",
+          "RPI3B"
+        ]
+      },
+      "uniqueItems": true
+    },
     "spec": {
       "type": "string",
       "default": "",
       "enum": [
         "",
-        "SDA",
-        "SCL",
-        "SCK",
-        "MISO",
-        "MOSI",
         "ADC",
+        "Barrel",
+        "BARREL_JACK",
+        "Battery",
+        "CapTouch",
+        "CTS",
+        "DAC",
+        "DCMA1",
+        "DCMA2",
+        "DCMB1",
+        "DCMB2",
         "DigitalIn",
         "DigitalIn-Int",
         "DigitalOut",
-        "PWM"
+        "DTR",
+        "ESPSoftwareSerialRX",
+        "ESPSoftwareSerialRX1",
+        "ESPSoftwareSerialTag",
+        "ESPSoftwareSerialTX",
+        "ESPSoftwareSerialTX1",
+        "FTDI",
+        "GndLoadSwitching",
+        "GndLoadSwitching-PWM",
+        "IORef",
+        "MISO",
+        "MISO1",
+        "MOSI",
+        "MOSI1",
+        "PWM",
+        "RX",
+        "RX2",
+        "RX3",
+        "SCK",
+        "SCK1",
+        "SCL",
+        "SDA",
+        "SoftwareSerial",
+        "SRAMLoad",
+        "SS",
+        "Timer2",
+        "TX",
+        "TX2",
+        "TX3",
+        "USB",
+        "USB_B",
+        "USB_MICRO",
+        "USB_MINI"
       ]
     },
     "voltage": {
       "type": "string",
-      "enum": ["GND", "3.3v", "3.7v", "5v", "6v", "7.4", "9v", "12v"]
+      "enum": ["", "GND", "3.3v", "3.7v", "5v", "6v", "7.4v", "9v", "12v"]
     }
   },
   "type": "object",
@@ -122,28 +184,7 @@
             "default": 0
           },
           "supportedControllers": {
-            "type": "array",
-            "title": "Supported Controllers",
-            "items": {
-              "type": "string",
-              "enum": [
-                "ATMega328P",
-                "ArduinoLeonardo",
-                "ArduinoMega",
-                "ArduinoMicro",
-                "ArduinoNano",
-                "ArduinoProMini5v",
-                "ArduinoUno",
-                "ATTiny85",
-                "Teensy32",
-                "ArduinoGemma",
-                "ArduinoProMini3v3",
-                "ESP32DevKitC",
-                "NodeMCU",
-                "RPI3B"
-              ]
-            },
-            "uniqueItems": true
+            "$ref": "#/definitions/supportedControllers"
           },
           "parts": {
             "type": "array",
@@ -177,8 +218,7 @@
                   "type": "array",
                   "title": "Blocks",
                   "items": {
-                    "type": "string",
-                    "enum": []
+                    "type": "string"
                   },
                   "uniqueItems": true
                 }
