@@ -92,9 +92,9 @@
         }
       }
     },
-    "auxParts": {
+    "bomAux": {
       "type": "array",
-      "title": "Auxilary parts",
+      "title": "Auxilary BoM parts",
       "description": "Bundle parts with no electrical connectivity - bolts, heatsinks etc.",
       "items": {
         "type": "string",
