@@ -170,6 +170,18 @@
       "type": "string",
       "title": "Notes"
     },
+    "altComp": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+          "cost": {
+            "type": "integer"
+          },
+          "block": {
+            "type": "string"
+            }
+          }
+        },   
     "circuits": {
       "type": "array",
       "title": "",
