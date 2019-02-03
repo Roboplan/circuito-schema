@@ -171,13 +171,17 @@
       "title": "Notes"
     },
     "altComp": {
+          "title": "Alternative block",
+          "description": "Alternative block to try if this one failed",
           "type": "object",
           "additionalProperties": false,
           "properties": {
           "cost": {
+            "title": "Alternative cost",
             "type": "integer"
           },
           "block": {
+            "title" : "Alternative block name",
             "type": "string"
             }
           }
