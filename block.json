@@ -151,11 +151,6 @@
               "type": "boolean",
               "default": false
             },
-            "code": {
-              "type": "boolean",
-              "title": "Has coder support",
-              "default": false
-            },
             "solder": {
               "type": "boolean",
               "title": "Requires soldering",
