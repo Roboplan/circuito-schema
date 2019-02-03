@@ -87,6 +87,9 @@
   "type": "object",
   "required": ["name", "category"],
   "properties": {
+    "path": {
+      "type": "string"
+    },
     "name": {
       "type": "string",
       "title": "Name"
