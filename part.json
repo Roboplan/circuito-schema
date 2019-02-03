@@ -1,5 +1,6 @@
 {
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "name": { "type": "string", "title": "Name" },
     "path": {
@@ -31,6 +32,7 @@
     "placing": {
       "title": "Part placing configuration",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "onBreadboard": {
           "type": "boolean",
@@ -44,6 +46,7 @@
       "items": {
         "type": "object",
         "title": "BoM data (Supplier)",
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string",
@@ -58,6 +61,7 @@
           "headers": {
             "type": "object",
             "title": "Headers",
+            "additionalProperties": false,
             "properties": {
               "type": {
                 "type": "string",
@@ -72,6 +76,7 @@
     },
     "info": {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "setup": {
           "type": "string",

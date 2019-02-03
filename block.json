@@ -86,6 +86,7 @@
   },
   "type": "object",
   "required": ["name", "category"],
+  "additionalProperties": false,
   "properties": {
     "path": {
       "type": "string"
@@ -119,6 +120,7 @@
       "type": "object",
       "title": "Appearance",
       "required": ["appName", "tags", "desc"],
+      "additionalProperties": false,
       "properties": {
         "appName": {
           "type": "string",
@@ -143,6 +145,7 @@
         "indicators": {
           "type": "object",
           "title": "Indicators",
+          "additionalProperties": false,
           "properties": {
             "verified": {
               "type": "boolean",
@@ -192,6 +195,7 @@
       "items": {
         "type": "object",
         "required": ["name", "priority"],
+        "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string",
@@ -210,6 +214,7 @@
             "items": {
               "type": "object",
               "required": ["name", "part"],
+              "additionalProperties": false,
               "properties": {
                 "name": {
                   "type": "string",
@@ -227,6 +232,7 @@
             "title": "Support Blocks [list only support and power blocks]",
             "items": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "cost": {
                   "type": "integer",
@@ -254,6 +260,7 @@
             "type": "array",
             "items": {
               "type": "object",
+              "additionalProperties": false,
               "properties": {
                 "from": {
                   "type": "string",
@@ -271,6 +278,7 @@
             "items": {
               "type": "object",
               "required": ["name"],
+              "additionalProperties": false,
               "properties": {
                 "name": {
                   "type": "string",
@@ -279,6 +287,7 @@
                 },
                 "interface": {
                   "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "codename": {
                       "title": "Port codename [show for category controller only]",
@@ -296,6 +305,7 @@
                       "title": "Requires",
                       "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                           "cost": {
                             "type": "integer",
@@ -311,6 +321,7 @@
                       "title": "Provides",
                       "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                           "spec": { "$ref": "#/definitions/spec" },
                           "voltage": { "$ref": "#/definitions/voltage" }

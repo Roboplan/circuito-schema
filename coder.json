@@ -27,6 +27,7 @@
     }
   },
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "name": { "type": "string", "title": "Name" },
     "path": {
@@ -44,6 +45,7 @@
     "instantiate": {
       "type": "object",
       "title": "Variable generation settings",
+      "additionalProperties": false,
       "properties": {
         "classname": { "type": "string", "title": "Class name {{classname}}" },
         "varname": { "type": "string", "title": "Variable name {{varname}}" }
@@ -58,6 +60,7 @@
     "code": {
       "type": "object",
       "title": "Code snippets",
+      "additionalProperties": false,
       "properties": {
         "global": { "type": "string" },
         "constructors": { "type": "string" },
