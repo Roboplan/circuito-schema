@@ -119,7 +119,7 @@
     "app": {
       "type": "object",
       "title": "Appearance",
-      "required": ["appName", "tags", "desc"],
+      "required": ["appName", "desc"],
       "additionalProperties": false,
       "properties": {
         "appName": {
