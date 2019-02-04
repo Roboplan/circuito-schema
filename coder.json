@@ -54,7 +54,7 @@
     "includeHeaders": {
       "type": "array",
       "title": "Include header files",
-      "description": "Files to #include in firmware.ino. Leave blank for all h files",
+      "description": "Files to #include in firmware.ino (from coder files or global library files)",
       "items": { "type": "string" }
     },
     "code": {
