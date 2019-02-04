@@ -169,21 +169,21 @@
       "title": "Notes"
     },
     "altComp": {
-          "title": "Alternative block",
-          "description": "Alternative block to try if this one failed",
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-          "cost": {
-            "title": "Alternative cost",
-            "type": "integer"
-          },
-          "block": {
-            "title" : "Alternative block name",
-            "type": "string"
-            }
-          }
-        },   
+      "title": "Alternative block",
+      "description": "Alternative block to try if this one failed",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "title": "Alternative cost",
+          "type": "integer"
+        },
+        "block": {
+          "title": "Alternative block name",
+          "type": "string"
+        }
+      }
+    },
     "circuits": {
       "type": "array",
       "title": "",
@@ -251,24 +251,8 @@
               "type": "string"
             }
           },
-          "wires": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "from": {
-                  "type": "string",
-                  "default": ""
-                },
-                "to": {
-                  "type": "string",
-                  "default": ""
-                }
-              }
-            }
-          },
           "ports": {
+            "title": "",
             "type": "array",
             "items": {
               "type": "object",
@@ -352,6 +336,26 @@
                   "type": "boolean",
                   "title": "Include in firmware",
                   "description": "Create coder variable for port"
+                }
+              }
+            }
+          },
+          "wires": {
+            "title": "",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "from": {
+                  "type": "string",
+                  "title": "From pin/port",
+                  "default": ""
+                },
+                "to": {
+                  "type": "string",
+                  "title": "To pin/port",
+                  "default": ""
                 }
               }
             }
