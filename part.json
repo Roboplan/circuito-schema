@@ -76,18 +76,17 @@
     },
     "info": {
       "type": "object",
+      "title": "",
       "additionalProperties": false,
       "properties": {
         "setup": {
           "type": "string",
           "title": "Setup info",
-          "default": "",
           "description": "Steps to prepare the part for use - soldering, correct orientation/placement tips etc."
         },
         "test": {
           "type": "string",
           "title": "Test info",
-          "default": "",
           "description": "Special instruction on how to test the part once circuit is ready"
         }
       }
