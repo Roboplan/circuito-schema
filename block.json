@@ -165,8 +165,8 @@
       }
     },
     "notes": {
-      "type": "array",
-      "title": "Notes"
+      "type": "string",
+      "title": "Notes and references"
     },
     "altComp": {
       "title": "Alternative block",
@@ -184,35 +184,12 @@
         }
       }
     },
-    "requiresExpansion": {
-            "type": "array",
-            "title": "Support Blocks which are extentions of controller pins (e.g. ADC MUX)",
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "cost": {
-                  "type": "integer",
-                  "title": "Cost",
-                  "default": 0
-                },
-                "blocks": {
-                  "type": "array",
-                  "title": "Blocks",
-                  "items": {
-                    "type": "string"
-                  },
-                  "uniqueItems": true
-                }
-              }
-            }
-          },
     "circuits": {
       "type": "array",
       "title": "",
       "items": {
         "type": "object",
-        "required": ["name", "priority"],
+        "required": ["name", "priority", "parts"],
         "additionalProperties": false,
         "properties": {
           "name": {
@@ -229,6 +206,7 @@
           },
           "parts": {
             "type": "array",
+            "minItems": 1,
             "items": {
               "type": "object",
               "required": ["name", "part"],
