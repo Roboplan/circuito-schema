@@ -165,7 +165,7 @@
       }
     },
     "notes": {
-      "type": "string",
+      "type": "array",
       "title": "Notes"
     },
     "altComp": {
@@ -184,6 +184,29 @@
         }
       }
     },
+    "requiresExpansion": {
+            "type": "array",
+            "title": "Support Blocks which are extentions of controller pins (e.g. ADC MUX)",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "cost": {
+                  "type": "integer",
+                  "title": "Cost",
+                  "default": 0
+                },
+                "blocks": {
+                  "type": "array",
+                  "title": "Blocks",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                }
+              }
+            }
+          },
     "circuits": {
       "type": "array",
       "title": "",
@@ -218,6 +241,10 @@
                 "part": {
                   "type": "string",
                   "title": "Part"
+                },
+                "rotation": {
+                  "type": "integer",
+                  "title": "Rotation"
                 }
               }
             }
@@ -278,6 +305,18 @@
                       "title": "Codename redirect",
                       "type": "string",
                       "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
+                    },
+                    "chainTo": {
+                      "title": "Chain to port name ",
+                      "type": "string",
+                      "default": "",
+                      "description": "will make a connection between this port and the chainTo port in case chaining in possible"
+                    },
+                    "chain": {
+                      "title": "Chainable port ",
+                      "type": "boolean",
+                      "default": "",
+                      "description": "True - this is a chainable port"
                     },
                     "requires": {
                       "type": "array",

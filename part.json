@@ -37,6 +37,14 @@
         "onBreadboard": {
           "type": "boolean",
           "title": "Place part on breadboard"
+        },
+        "row": {
+          "type": "integer",
+          "title": "Place part on specific row on breadboard"
+        },
+        "rotation": {
+          "type": "integer",
+          "title": "Place part with a specific rotation"
         }
       }
     },
@@ -58,6 +66,7 @@
           "SKU": { "type": "string", "default": "" },
           "link": { "type": "string", "title": "Link", "default": "" },
           "price": { "type": "string", "title": "Price (USD)", "default": "" },
+          "packOf": { "type": "integer", "default": "" },
           "headers": {
             "type": "object",
             "title": "Headers",
@@ -96,8 +105,7 @@
       "title": "Auxilary BoM parts",
       "description": "Bundle parts with no electrical connectivity - bolts, heatsinks etc.",
       "items": {
-        "type": "string",
-        "enum": []
+        "type": "string"
       },
       "uniqueItems": true
     },
