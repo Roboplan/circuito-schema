@@ -230,7 +230,7 @@
           },
           "requiredBlocks": {
             "type": "array",
-            "title": "Support Blocks [list only support and power blocks]",
+            "title": "Support Blocks",
             "items": {
               "type": "object",
               "additionalProperties": false,
