@@ -66,7 +66,11 @@
           "SKU": { "type": "string", "default": "" },
           "link": { "type": "string", "title": "Link", "default": "" },
           "price": { "type": "string", "title": "Price (USD)", "default": "" },
-          "packOf": { "type": "integer", "default": "" },
+          "packOf": {
+            "type": "integer",
+            "title": "Number of items in package",
+            "default": 1
+          },
           "headers": {
             "type": "object",
             "title": "Headers",

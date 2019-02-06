@@ -286,16 +286,14 @@
                       "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
                     },
                     "chainTo": {
-                      "title": "Chain to port name ",
+                      "title": "Chain to port name",
                       "type": "string",
-                      "default": "",
-                      "description": "will make a connection between this port and the chainTo port in case chaining in possible"
+                      "description": "Chain to this port to another port when possible"
                     },
                     "chain": {
-                      "title": "Chainable port ",
+                      "title": "Port is chainable",
                       "type": "boolean",
-                      "default": "",
-                      "description": "True - this is a chainable port"
+                      "description": "Allow other ports the chain to this port"
                     },
                     "requires": {
                       "type": "array",
