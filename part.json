@@ -40,11 +40,23 @@
         },
         "row": {
           "type": "integer",
-          "title": "Place part on specific row on breadboard"
+          "title": "Breadboard row",
+          "description": "Place part on specific row on breadboard (leave blank for auto)",
+          "enum": [0, 1, 2, 3, 4],
+          "enumNames": [
+            "0 (top row)",
+            "1",
+            "2",
+            "3",
+            "4 (adjacent to middle gap)"
+          ]
         },
         "rotation": {
           "type": "integer",
-          "title": "Place part with a specific rotation"
+          "title": "Rotation",
+          "description": "Place part with a specific rotation ",
+          "default": 0,
+          "enum": [0, 90, 180, 270]
         }
       }
     },

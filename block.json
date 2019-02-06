@@ -223,7 +223,8 @@
                 "rotation": {
                   "type": "integer",
                   "title": "Rotation over-ride",
-                  "description": "Specify part rotation (deg.) on canvas. Leave blank for auto-rotation"
+                  "description": "Specify part rotation (deg.) on canvas. Leave blank for auto-rotation",
+                  "enum": [0, 90, 180, 270]
                 }
               }
             }
@@ -336,7 +337,6 @@
                             "provides": {
                               "type": "array",
                               "title": "Provides",
-                              "minItems": 1,
                               "items": {
                                 "type": "object",
                                 "additionalProperties": false,
