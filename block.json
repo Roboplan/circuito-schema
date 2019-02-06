@@ -277,8 +277,8 @@
                     "portType": {
                       "title": "Type",
                       "type": "string",
-                      "enum": ["requires", "provides"],
-                      "enumNames": ["Requires specs", "Provides specs"]
+                      "enum": ["requires", "provides", "chainable"],
+                      "enumNames": ["Requires specs", "Provides specs", "Chainable Port"]
                     }
                   },
                   "dependencies": {
@@ -373,6 +373,20 @@
                             }
                           },
                           "required": ["provides"]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "portType": {
+                              "enum": ["chainable"]
+                            },
+                            "chain": {
+                              "title": "Port is chainable",
+                              "type": "boolean",
+                              "description": "Allow other ports the chain to this port"
+                            }
+                          },
+                          "required": ["chain"]
                         }
                       ]
                     }
