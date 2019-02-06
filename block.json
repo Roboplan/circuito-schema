@@ -262,7 +262,7 @@
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["name"],
+              "required": ["name", "interface"],
               "additionalProperties": false,
               "properties": {
                 "name": {
@@ -272,79 +272,109 @@
                 },
                 "interface": {
                   "type": "object",
-                  "additionalProperties": false,
+                  "required": ["portType"],
                   "properties": {
-                    "codename": {
-                      "title": "Port codename [show for category controller only]",
+                    "portType": {
+                      "title": "Type",
                       "type": "string",
-                      "default": "",
-                      "description": "Override deafult port name used in coder (used for controllers only)"
-                    },
-                    "codenameRedirect": {
-                      "title": "Codename redirect",
-                      "type": "string",
-                      "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
-                    },
-                    "chainTo": {
-                      "title": "Chain to port name",
-                      "type": "string",
-                      "description": "Chain to this port to another port when possible"
-                    },
-                    "chain": {
-                      "title": "Port is chainable",
-                      "type": "boolean",
-                      "description": "Allow other ports the chain to this port"
-                    },
-                    "requires": {
-                      "type": "array",
-                      "title": "Requires",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "cost": {
-                            "type": "integer",
-                            "default": 0
+                      "enum": ["requires", "provides"],
+                      "enumNames": ["Requires specs", "Provides specs"]
+                    }
+                  },
+                  "dependencies": {
+                    "portType": {
+                      "oneOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "portType": {
+                              "enum": ["requires"]
+                            },
+                            "requires": {
+                              "type": "array",
+                              "title": "Requires",
+                              "minItems": 1,
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "cost": {
+                                    "type": "integer",
+                                    "default": 0
+                                  },
+                                  "spec": { "$ref": "#/definitions/spec" },
+                                  "voltage": { "$ref": "#/definitions/voltage" }
+                                }
+                              }
+                            },
+                            "requiresLoad": {
+                              "title": "Requires max load (mA)",
+                              "type": "integer"
+                            },
+                            "unique": {
+                              "title": "Unique port",
+                              "type": "boolean",
+                              "description": "No other ports will be routed to this port's provider"
+                            },
+                            "chainTo": {
+                              "title": "Chain to port name",
+                              "type": "string",
+                              "description": "Chain to this port to another port when possible"
+                            },
+                            "isBus": {
+                              "type": "boolean"
+                            }
                           },
-                          "spec": { "$ref": "#/definitions/spec" },
-                          "voltage": { "$ref": "#/definitions/voltage" }
+                          "required": ["requires"]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "portType": {
+                              "enum": ["provides"]
+                            },
+                            "provides": {
+                              "type": "array",
+                              "title": "Provides",
+                              "minItems": 1,
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "spec": { "$ref": "#/definitions/spec" },
+                                  "voltage": { "$ref": "#/definitions/voltage" }
+                                }
+                              }
+                            },
+                            "providesLoad": {
+                              "title": "Provides max load (mA)",
+                              "type": "integer"
+                            },
+                            "redirectLoad": {
+                              "title": "Redirect load",
+                              "type": "string",
+                              "description": "Redirect load verification to another port (used for support blocks only)"
+                            },
+                            "chain": {
+                              "title": "Port is chainable",
+                              "type": "boolean",
+                              "description": "Allow other ports the chain to this port"
+                            },
+                            "codename": {
+                              "title": "Port codename [show for category controller only]",
+                              "type": "string",
+                              "default": "",
+                              "description": "Override deafult port name used in coder (used for controllers only)"
+                            },
+                            "codenameRedirect": {
+                              "title": "Codename redirect",
+                              "type": "string",
+                              "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
+                            }
+                          },
+                          "required": ["provides"]
                         }
-                      }
-                    },
-                    "provides": {
-                      "type": "array",
-                      "title": "Provides",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "spec": { "$ref": "#/definitions/spec" },
-                          "voltage": { "$ref": "#/definitions/voltage" }
-                        }
-                      }
-                    },
-                    "requiresLoad": {
-                      "title": "Requires max load (mA)",
-                      "description": "For a 'requires' port",
-                      "type": "integer"
-                    },
-                    "providesLoad": {
-                      "title": "Provides max load (mA)",
-                      "description": "For a 'provides' port",
-                      "type": "integer"
-                    },
-                    "redirectLoad": {
-                      "title": "Redirect load",
-                      "type": "string",
-                      "description": "Redirect load verification to another port (used for support blocks only)"
-                    },
-                    "unique": {
-                      "title": "Unique port",
-                      "type": "boolean",
-                      "description": "For 'requires' port, no other ports will be routed to its provider"
-                    },
-                    "isBus": {
-                      "type": "boolean"
+                      ]
                     }
                   }
                 },
