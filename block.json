@@ -94,10 +94,12 @@
     },
     "name": {
       "type": "string",
-      "title": "Name"
+      "title": "Name",
+      "description": "{{block.name}}"
     },
     "category": {
       "title": "Category",
+      "description": "{{block.category}}",
       "type": "array",
       "items": {
         "type": "string",
@@ -125,11 +127,13 @@
       "properties": {
         "appName": {
           "type": "string",
-          "title": "Application name"
+          "title": "Application name",
+          "description": "{{block.appName}}"
         },
         "image": {
           "type": "string",
-          "title": "Image"
+          "title": "Image",
+          "description": "{{block.image}}"
         },
         "numericName": {
           "type": "string",
@@ -141,7 +145,8 @@
         },
         "visible": {
           "type": "boolean",
-          "title": "Visible in application"
+          "title": "Visible in application",
+          "description": "{{block.visible}}"
         },
         "indicators": {
           "type": "object",
@@ -155,23 +160,26 @@
             "solder": {
               "type": "boolean",
               "title": "Requires soldering",
-              "default": false
+              "default": false,
+              "description": "{{block.requiresSoldering}}"
             }
           }
         },
         "desc": {
           "type": "string",
-          "title": "Description"
+          "title": "Description",
+          "description": "{{block.description}}"
         }
       }
     },
     "notes": {
       "type": "string",
-      "title": "Notes and references"
+      "title": "Notes and references",
+      "description": "{{block.notes}}"
     },
     "altComp": {
       "title": "Alternative block",
-      "description": "Alternative block to try if this one failed",
+      "description": "{{block.alternativeBlock}}",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -187,7 +195,8 @@
     },
     "circuits": {
       "type": "array",
-      "title": "",
+      "title": "Circuits",
+      "description": "{{block.circuits}}",
       "items": {
         "type": "object",
         "required": ["name", "priority", "parts"],
@@ -195,15 +204,18 @@
         "properties": {
           "name": {
             "type": "string",
-            "title": "Name"
+            "title": "Name",
+            "description": "{{circuit.name}}"
           },
           "priority": {
             "type": "integer",
             "title": "Priority",
+            "description": "{{circuit.cost}}",
             "default": 0
           },
           "supportedControllers": {
-            "$ref": "#/definitions/supportedControllers"
+            "$ref": "#/definitions/supportedControllers",
+            "description": "{{circuit.supportedControllers}}"
           },
           "parts": {
             "type": "array",
@@ -215,11 +227,13 @@
               "properties": {
                 "name": {
                   "type": "string",
-                  "title": "Instance name"
+                  "title": "Instance name",
+                  "description": "{{circuit.part.instanceName}}"
                 },
                 "part": {
                   "type": "string",
-                  "title": "Part"
+                  "title": "Part",
+                  "description": "{{circuit.part.part}}"
                 },
                 "rotation": {
                   "type": "integer",
@@ -233,6 +247,7 @@
           "requiredBlocks": {
             "type": "array",
             "title": "Support Blocks",
+            "description": "{{circuit.supportBlocks}}",
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -240,6 +255,7 @@
                 "cost": {
                   "type": "integer",
                   "title": "Cost",
+                  "description": "{{circuit.supportBlocks.cost}}",
                   "default": 0
                 },
                 "blocks": {
@@ -260,8 +276,9 @@
             }
           },
           "ports": {
-            "title": "",
+            "title": "Ports",
             "type": "array",
+            "description": "{{circuit.ports}}",
             "items": {
               "type": "object",
               "required": ["name", "interface"],
@@ -270,6 +287,7 @@
                 "name": {
                   "type": "string",
                   "title": "Port name",
+                  "description": "{{circuit.port.name}}",
                   "default": ""
                 },
                 "interface": {
