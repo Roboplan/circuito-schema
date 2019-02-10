@@ -199,7 +199,7 @@
       "description": "{{block.circuits}}",
       "items": {
         "type": "object",
-        "required": ["name", "priority", "parts"],
+        "required": ["name", "cost", "parts"],
         "additionalProperties": false,
         "properties": {
           "name": {
@@ -207,9 +207,9 @@
             "title": "Name",
             "description": "{{circuit.name}}"
           },
-          "priority": {
+          "cost": {
             "type": "integer",
-            "title": "Priority",
+            "title": "Cost",
             "description": "{{circuit.cost}}",
             "default": 0
           },
