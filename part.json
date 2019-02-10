@@ -121,8 +121,7 @@
       "title": "Auxilary BoM parts",
       "description": "Bundle parts with no electrical connectivity - bolts, heatsinks etc.",
       "items": {
-        "type": "string",
-        "enum": []
+        "type": "string"
       },
       "uniqueItems": true
     },
