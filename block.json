@@ -228,12 +228,14 @@
                 "name": {
                   "type": "string",
                   "title": "Instance name",
-                  "description": "{{circuit.part.instanceName}}"
+                  "description": "{{circuit.part.instanceName}}",
+                  "minLength": 1
                 },
                 "part": {
                   "type": "string",
                   "title": "Part",
-                  "description": "{{circuit.part.part}}"
+                  "description": "{{circuit.part.part}}",
+                  "minLength": 1
                 },
                 "rotation": {
                   "type": "integer",
@@ -272,7 +274,8 @@
           "coders": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "ports": {
