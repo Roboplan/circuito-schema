@@ -1,6 +1,7 @@
 {
   "type": "object",
   "additionalProperties": false,
+  "required": ["name", "bom", "category"],
   "properties": {
     "name": { "type": "string", "title": "Name" },
     "path": {
@@ -32,37 +33,58 @@
     "placing": {
       "title": "Part placing configuration",
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "onBreadboard": {
           "type": "boolean",
-          "title": "Place part on breadboard"
-        },
-        "row": {
-          "type": "integer",
-          "title": "Breadboard row",
-          "description": "Place part on specific row on breadboard (leave blank for auto)",
-          "enum": [0, 1, 2, 3, 4],
-          "enumNames": [
-            "0 (top row)",
-            "1",
-            "2",
-            "3",
-            "4 (adjacent to middle gap)"
+          "title": "Place part on breadboard",
+          "default": false
+        }
+      },
+      "dependencies": {
+        "onBreadboard": {
+          "oneOf": [
+            {
+              "properties": {
+                "onBreadboard": {
+                  "enum": [false]
+                }
+              }
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "onBreadboard": {
+                  "enum": [true]
+                },
+                "row": {
+                  "type": "integer",
+                  "title": "Breadboard row",
+                  "description": "{{part.row}}",
+                  "enum": [0, 1, 2, 3, 4],
+                  "enumNames": [
+                    "0 (top row)",
+                    "1",
+                    "2",
+                    "3",
+                    "4 (adjacent to middle gap)"
+                  ]
+                },
+                "rotation": {
+                  "type": "integer",
+                  "title": "Breadboard rotation",
+                  "description": "{{part.rotation}}",
+                  "enum": [0, 90, 180, 270]
+                }
+              }
+            }
           ]
-        },
-        "rotation": {
-          "type": "integer",
-          "title": "Rotation",
-          "description": "Place part with a specific rotation ",
-          "default": 0,
-          "enum": [0, 90, 180, 270]
         }
       }
     },
     "bom": {
       "type": "array",
       "title": "BoM (Suppliers List)",
+      "minItems": 1,
       "items": {
         "type": "object",
         "title": "BoM data (Supplier)",
@@ -103,16 +125,19 @@
       "type": "object",
       "title": "",
       "additionalProperties": false,
+      "required": ["setup", "test"],
       "properties": {
         "setup": {
           "type": "string",
           "title": "Setup info",
-          "description": "Steps to prepare the part for use - soldering, correct orientation/placement tips etc."
+          "description": "Steps to prepare the part for use - soldering, correct orientation/placement tips etc.",
+          "default": ""
         },
         "test": {
           "type": "string",
           "title": "Test info",
-          "description": "Special instruction on how to test the part once circuit is ready"
+          "description": "Special instruction on how to test the part once circuit is ready",
+          "default": ""
         }
       }
     },
