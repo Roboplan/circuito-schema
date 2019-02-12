@@ -121,19 +121,12 @@
     },
     "app": {
       "type": "object",
-      "title": "Appearance",
-      "required": ["appName", "desc"],
-      "additionalProperties": false,
+      "title": "Appearance in App",
       "properties": {
-        "appName": {
-          "type": "string",
-          "title": "Application name",
-          "description": "{{block.appName}}"
-        },
-        "image": {
-          "type": "string",
-          "title": "Image",
-          "description": "{{block.image}}"
+        "visible": {
+          "type": "boolean",
+          "title": "Visible in application",
+          "description": "{{block.visible}}"
         },
         "numericName": {
           "type": "string",
@@ -142,33 +135,59 @@
         "shortName": {
           "type": "string",
           "title": "Short name"
-        },
+        }
+      },
+      "dependencies": {
         "visible": {
-          "type": "boolean",
-          "title": "Visible in application",
-          "description": "{{block.visible}}"
-        },
-        "indicators": {
-          "type": "object",
-          "title": "Indicators",
-          "additionalProperties": false,
-          "properties": {
-            "verified": {
-              "type": "boolean",
-              "default": false
+          "oneOf": [
+            {
+              "properties": {
+                "visible": {
+                  "enum": [false]
+                }
+              }
             },
-            "solder": {
-              "type": "boolean",
-              "title": "Requires soldering",
-              "default": false,
-              "description": "{{block.requiresSoldering}}"
+            {
+              "additionalItems": false,
+              "properties": {
+                "visible": {
+                  "enum": [true]
+                },
+                "appName": {
+                  "type": "string",
+                  "title": "Full name",
+                  "description": "{{block.appName}}"
+                },
+                "image": {
+                  "type": "string",
+                  "title": "Image",
+                  "description": "{{block.image}}"
+                },
+                "indicators": {
+                  "type": "object",
+                  "title": "Indicators",
+                  "additionalProperties": false,
+                  "properties": {
+                    "verified": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "solder": {
+                      "type": "boolean",
+                      "title": "Requires soldering",
+                      "default": false,
+                      "description": "{{block.requiresSoldering}}"
+                    }
+                  }
+                },
+                "desc": {
+                  "type": "string",
+                  "title": "Description",
+                  "description": "{{block.description}}"
+                }
+              }
             }
-          }
-        },
-        "desc": {
-          "type": "string",
-          "title": "Description",
-          "description": "{{block.description}}"
+          ]
         }
       }
     },
