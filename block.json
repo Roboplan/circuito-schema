@@ -291,7 +291,7 @@
                   "type": "string",
                   "title": "Port name",
                   "description": "{{circuit.port.name}}",
-                  "default": ""
+                  "minLength": 1
                 },
                 "interface": {
                   "type": "object",
@@ -403,7 +403,7 @@
                 "includeInFirmware": {
                   "type": "boolean",
                   "title": "Include in firmware",
-                  "description": "Create coder variable for port"
+                  "description": "{{circuit.part.includeInFirmware}}"
                 }
               }
             }
@@ -414,16 +414,17 @@
             "items": {
               "type": "object",
               "additionalProperties": false,
+              "required": ["from", "to"],
               "properties": {
                 "from": {
                   "type": "string",
                   "title": "From pin/port",
-                  "default": ""
+                  "minLength": 1
                 },
                 "to": {
                   "type": "string",
                   "title": "To pin/port",
-                  "default": ""
+                  "minLength": 1
                 }
               }
             }
