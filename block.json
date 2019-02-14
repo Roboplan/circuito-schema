@@ -258,8 +258,8 @@
                 },
                 "rotation": {
                   "type": "integer",
-                  "title": "Rotation over-ride",
-                  "description": "Specify part rotation (deg.) on canvas. Leave blank for auto-rotation",
+                  "title": "Rotation",
+                  "description": "{{circuit.part.rotation}}",
                   "enum": [0, 90, 180, 270]
                 }
               }

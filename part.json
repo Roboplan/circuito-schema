@@ -113,7 +113,12 @@
               "type": {
                 "type": "string",
                 "title": "Headers type",
-                "enum": ["FemaleHeaders", "MaleHeaders", "MaleHeadersTall"]
+                "enum": ["FemaleHeaders", "MaleHeaders", "MaleHeadersTall"],
+                "enumNames": [
+                  "Female Headers (normal)",
+                  "Male Headers (normal)",
+                  "Male Headers (tall)"
+                ]
               },
               "qty": { "type": "integer", "title": "Headers quantity" }
             }
