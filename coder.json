@@ -62,10 +62,26 @@
       "title": "Code snippets",
       "additionalProperties": false,
       "properties": {
-        "global": { "type": "string" },
-        "constructors": { "type": "string" },
-        "setup": { "type": "string" },
-        "snippetCode": { "type": "string" }
+        "global": {
+          "type": "string",
+          "title": "Global",
+          "description": "{{coder.code.global}}"
+        },
+        "constructors": {
+          "type": "string",
+          "title": "Constructors",
+          "description": "{{coder.code.constructors}}"
+        },
+        "setup": {
+          "type": "string",
+          "title": "Setup",
+          "description": "{{coder.code.setup}}"
+        },
+        "snippetCode": {
+          "type": "string",
+          "title": "Snippet",
+          "description": "{{coder.code.snippet}}"
+        }
       }
     }
   }
