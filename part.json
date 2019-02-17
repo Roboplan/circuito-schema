@@ -7,7 +7,11 @@
     "path": {
       "type": "string"
     },
-    "displayName": { "type": "string", "title": "Display Name" },
+    "displayName": {
+      "type": "string",
+      "title": "Display Name",
+      "description": "{{part.description}}"
+    },
     "desc": { "type": "string", "title": "Description" },
     "symbol": {
       "type": "string",
@@ -37,7 +41,8 @@
         "onBreadboard": {
           "type": "boolean",
           "title": "Place part on breadboard",
-          "default": false
+          "default": false,
+          "description": "{{part.placing.onBreadboard}}"
         }
       },
       "dependencies": {
