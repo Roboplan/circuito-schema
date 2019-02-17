@@ -4,25 +4,7 @@
       "type": "array",
       "title": "Supported Controllers",
       "items": {
-        "type": "string",
-        "enum": [
-          "ATMega328P",
-          "ArduinoLeonardo",
-          "ArduinoMega",
-          "ArduinoMicro",
-          "ArduinoNano",
-          "ArduinoProMini5v",
-          "ArduinoUno",
-          "Arduino101",
-          "ATTiny85",
-          "Teensy32",
-          "ArduinoGemma",
-          "ArduinoProMini3v3",
-          "ESP32DevKitC",
-          "NodeMCU",
-          "RPI3B",
-          "WemosD1Mini"
-        ]
+        "type": "string"
       },
       "uniqueItems": true
     },
