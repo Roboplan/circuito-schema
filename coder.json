@@ -28,7 +28,7 @@
   },
   "type": "object",
   "additionalProperties": false,
-  "required": ["name", "instantiate"],
+  "required": ["name"],
   "properties": {
     "name": { "type": "string", "title": "Name" },
     "path": {
@@ -46,7 +46,6 @@
     "instantiate": {
       "type": "object",
       "title": "Variable generation settings",
-      "required": ["varname"],
       "additionalProperties": false,
       "properties": {
         "classname": { "type": "string", "title": "Class name {{classname}}" },
