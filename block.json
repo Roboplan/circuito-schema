@@ -338,12 +338,12 @@
                             "unique": {
                               "title": "Unique port",
                               "type": "boolean",
-                              "description": "No other ports will be routed to this port's provider"
+                              "description": "{{circuit.port.unique}}"
                             },
                             "chainTo": {
                               "title": "Chain to port name",
                               "type": "string",
-                              "description": "Chain to this port to another port when possible"
+                              "description": "{{circuit.port.chainTo}}"
                             },
                             "isBus": {
                               "type": "boolean"
