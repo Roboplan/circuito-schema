@@ -3,8 +3,11 @@
   "additionalProperties": false,
   "required": ["name", "bom", "category"],
   "properties": {
-    "name": { "type": "string", "title": "Name" ,
-      "description": "{{part.name}}"},
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "{{part.name}}"
+    },
     "path": {
       "type": "string"
     },
@@ -17,7 +20,7 @@
       "type": "string",
       "title": "Description",
       "description": "{{part.desc}}"
-      },
+    },
 
     "symbol": {
       "type": "string",
@@ -110,10 +113,28 @@
             "default": "",
             "enum": ["octopart", "digikey", "other"]
           },
-          "image": { "type": "string", "title": "Image" , "description": "{{part.image}}"},
-          "SKU": { "type": "string", "default": "" , "description": "{{part.sku}}"},
-          "link": { "type": "string", "title": "Link", "default": "" , "description": "{{part.link}}"},
-          "price": { "type": "string", "title": "Price (USD)", "default": "" , "description": "{{part.price}}"},
+          "image": {
+            "type": "string",
+            "title": "Image",
+            "description": "{{part.image}}"
+          },
+          "SKU": {
+            "type": "string",
+            "default": "",
+            "description": "{{part.sku}}"
+          },
+          "link": {
+            "type": "string",
+            "title": "Link",
+            "default": "",
+            "description": "{{part.link}}"
+          },
+          "price": {
+            "type": "string",
+            "title": "Price (USD)",
+            "default": "",
+            "description": "{{part.price}}"
+          },
           "packOf": {
             "type": "integer",
             "title": "Number of items in package",
@@ -137,7 +158,11 @@
                   "Male Headers (tall)"
                 ]
               },
-              "qty": { "type": "integer", "title": "Headers quantity", "description": "{{part.headers.qtty}}" }
+              "qty": {
+                "type": "integer",
+                "title": "Headers quantity",
+                "description": "{{part.headers.qty}}"
+              }
             }
           }
         }
