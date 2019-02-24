@@ -30,37 +30,53 @@
   "additionalProperties": false,
   "required": ["name"],
   "properties": {
-    "name": { "type": "string", "title": "Name" },
+    "name": {
+      "type": "string",
+      "description": "{{coder.name}}",
+      "title": "Name" },
     "path": {
       "type": "string"
     },
     "supportedControllers": {
+      "description": "{{coder.supportedControllers}}",
       "$ref": "#/definitions/supportedControllers"
     },
     "files": {
+      "description": "{{coder.files}}",
       "type": "array",
       "title": "Library files",
       "items": { "type": "string" }
     },
-    "license": { "type": "string", "title": "License", "default": "" },
+    "license": {
+      "type": "string",
+      "title": "License",
+      "description": "{{coder.license}}",
+      "default": "" },
     "instantiate": {
       "type": "object",
       "title": "Variable generation settings",
       "additionalProperties": false,
       "properties": {
-        "classname": { "type": "string", "title": "Class name {{classname}}" },
-        "varname": { "type": "string", "title": "Variable name {{varname}}" }
+        "classname": {
+          "type": "string",
+          "title": "Class name {{classname}}",
+          "description": "{{coder.classname}}"},
+        "varname": {
+          "type": "string",
+          "title": "Variable name {{varname}}",
+          "description": "{{coder.varname}}"}
       }
     },
     "includeHeaders": {
       "type": "array",
       "title": "Include header files",
-      "description": "Files to #include in firmware.ino (from coder files or global library files)",
+      "description": "{{coder.headers}}",
       "items": { "type": "string" }
     },
     "code": {
       "type": "object",
       "title": "Code snippets",
+      "description": "{{coder.code}}",
       "additionalProperties": false,
       "properties": {
         "global": {

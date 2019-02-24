@@ -3,24 +3,31 @@
   "additionalProperties": false,
   "required": ["name", "bom", "category"],
   "properties": {
-    "name": { "type": "string", "title": "Name" },
+    "name": { "type": "string", "title": "Name" ,
+      "description": "{{part.name}}"},
     "path": {
       "type": "string"
     },
     "displayName": {
       "type": "string",
       "title": "Display Name",
-      "description": "{{part.description}}"
+      "description": "{{part.displayName}}"
     },
-    "desc": { "type": "string", "title": "Description" },
+    "desc": {
+      "type": "string",
+      "title": "Description",
+      "description": "{{part.desc}}"
+      },
+
     "symbol": {
       "type": "string",
       "title": "SVG Symbol",
-      "description": "SVG Symbol URL see circuito.io/blog/SVG-Guidelines"
+      "description": "{{part.symbol}}"
     },
     "category": {
       "title": "Category",
       "type": "array",
+      "description": "{{part.category}}",
       "items": {
         "type": "string",
         "enum": [
@@ -93,31 +100,36 @@
       "items": {
         "type": "object",
         "title": "BoM data (Supplier)",
+        "description": "{{part.bomItem}}",
         "additionalProperties": false,
         "properties": {
           "name": {
             "type": "string",
             "title": "Supplier",
+            "description": "{{part.supplier}}",
             "default": "",
             "enum": ["octopart", "digikey", "other"]
           },
-          "image": { "type": "string", "title": "Image" },
-          "SKU": { "type": "string", "default": "" },
-          "link": { "type": "string", "title": "Link", "default": "" },
-          "price": { "type": "string", "title": "Price (USD)", "default": "" },
+          "image": { "type": "string", "title": "Image" , "description": "{{part.image}}"},
+          "SKU": { "type": "string", "default": "" , "description": "{{part.sku}}"},
+          "link": { "type": "string", "title": "Link", "default": "" , "description": "{{part.link}}"},
+          "price": { "type": "string", "title": "Price (USD)", "default": "" , "description": "{{part.price}}"},
           "packOf": {
             "type": "integer",
             "title": "Number of items in package",
+            "description": "{{part.packOf}}",
             "default": 1
           },
           "headers": {
             "type": "object",
             "title": "Headers",
+            "description": "{{part.headers}}",
             "additionalProperties": false,
             "properties": {
               "type": {
                 "type": "string",
                 "title": "Headers type",
+                "description": "{{part.headers.type}}",
                 "enum": ["FemaleHeaders", "MaleHeaders", "MaleHeadersTall"],
                 "enumNames": [
                   "Female Headers (normal)",
@@ -125,7 +137,7 @@
                   "Male Headers (tall)"
                 ]
               },
-              "qty": { "type": "integer", "title": "Headers quantity" }
+              "qty": { "type": "integer", "title": "Headers quantity", "description": "{{part.headers.qtty}}" }
             }
           }
         }
@@ -140,13 +152,13 @@
         "setup": {
           "type": "string",
           "title": "Setup info",
-          "description": "Steps to prepare the part for use - soldering, correct orientation/placement tips etc.",
+          "description": "{{part.info.setup}}",
           "default": ""
         },
         "test": {
           "type": "string",
           "title": "Test info",
-          "description": "Special instruction on how to test the part once circuit is ready",
+          "description": "{{part.info.test}}",
           "default": ""
         }
       }
@@ -154,7 +166,7 @@
     "bomAux": {
       "type": "array",
       "title": "Auxilary BoM parts",
-      "description": "Bundle parts with no electrical connectivity - bolts, heatsinks etc.",
+      "description": "{{part.bomAux}}",
       "items": {
         "type": "string"
       },

@@ -221,6 +221,8 @@
           "parts": {
             "type": "array",
             "minItems": 1,
+            "title": "Parts",
+            "description": "{{circuit.parts}}",
             "items": {
               "type": "object",
               "required": ["name", "part"],
@@ -274,6 +276,7 @@
           },
           "coders": {
             "type": "array",
+            "description": "{{circuit.coders}}",
             "items": {
               "type": "string",
               "minLength": 1
@@ -301,6 +304,7 @@
                     "portType": {
                       "title": "Type",
                       "type": "string",
+                      "description": "{{circuit.port.type}}",
                       "enum": ["requires", "provides"],
                       "enumNames": ["Requires specs", "Provides specs"]
                     }
@@ -317,6 +321,7 @@
                             "requires": {
                               "type": "array",
                               "title": "Requires",
+                              "description": "{{circuit.port.requires}}",
                               "minItems": 1,
                               "items": {
                                 "type": "object",
@@ -333,6 +338,7 @@
                             },
                             "requiresLoad": {
                               "title": "Requires max load (mA)",
+                              "description": "{{circuit.port.requires.load}}",
                               "type": "integer"
                             },
                             "unique": {
@@ -360,6 +366,7 @@
                             "provides": {
                               "type": "array",
                               "title": "Provides",
+                              "description": "{{circuit.port.provides}}",
                               "items": {
                                 "type": "object",
                                 "additionalProperties": false,
@@ -371,28 +378,28 @@
                             },
                             "providesLoad": {
                               "title": "Provides max load (mA)",
+                              "description": "{{circuit.port.provides.load}}",
                               "type": "integer"
                             },
                             "redirectLoad": {
                               "title": "Redirect load",
-                              "type": "string",
-                              "description": "Redirect load verification to another port (used for support blocks only)"
+                              "description": "{{circuit.port.provides.redirectLoad}}",
+                              "type": "string"
                             },
                             "chain": {
                               "title": "Port is chainable",
-                              "type": "boolean",
-                              "description": "Allow other ports the chain to this port"
+                              "description": "{{circuit.port.provides.chain}}",
+                              "type": "boolean"
                             },
                             "codename": {
                               "title": "Port codename [show for category controller only]",
                               "type": "string",
-                              "default": "",
-                              "description": "Override deafult port name used in coder (used for controllers only)"
-                            },
+                              "description": "{{circuit.port.provides.codename}}",
+                              "default": ""                            },
                             "codenameRedirect": {
                               "title": "Codename redirect",
-                              "type": "string",
-                              "description": "Redirect coder to another port when resolving this port (used for support blocks only)"
+                              "description": "{{circuit.port.provides.codenameRedirect}}",
+                              "type": "string"
                             }
                           },
                           "required": ["provides"]
